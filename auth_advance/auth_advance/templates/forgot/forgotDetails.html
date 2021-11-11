@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>change password</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <label>Enter Username</label>
+<input type="text" name="uname" required><br><br>
+<label>Enter New Password</label>
+<input type="password" name="newpwd1" required><br><br>
+    <label>Re-Enter New Password</label>
+<input type="password" name="newpwd2" required><br><br>
+<input type="submit" value="Enter"><br><br>
+    {% for msg in messages %}
+    <p style="color:green;">{{msg}}</p>
+    {% endfor %}
+    <a href="{% url 'login' %}">Login</a>
+</form>
+</body>
+</html>

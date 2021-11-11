@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forgot</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <label>Enter Username</label>
+    <input type="text" name="uname"><br><br>
+
+    <label>Enter registered Email Id</label>
+<input type="email" name="email">
+    <input type="submit">
+    {% for msg in messages %}
+    <p>{{msg}}</p>
+    {% endfor %}
+</form>
+
+
+</body>
+</html>
