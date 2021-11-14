@@ -7,7 +7,17 @@
     <title>home</title>
 </head>
 <body>
-    <h1>Welcome to Home page,You are logged!</h1>
+    <h1>Welcome to Home page</h1>
+    <a href="{% url 'article' %}">Article</a>
+
+    {% if request.session.username %}
+    <a href="{% url 'cLogout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'verifyEmail' %}">Register</a>
+    <a href="{% url 'cLogin' %}">Login</a>
+    {% endif %}
+
+
 
 </body>
 </html>
